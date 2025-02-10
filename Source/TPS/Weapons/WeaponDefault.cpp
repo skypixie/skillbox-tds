@@ -167,10 +167,14 @@ void AWeaponDefault::WeaponInit()
 void AWeaponDefault::SetWeaponStateFire_OnServer_Implementation(bool bIsFire)
 {
 	if (CheckWeaponCanFire())
+	{
 		WeaponFiring = bIsFire;
+	}
 	else
+	{
 		WeaponFiring = false;
 		FireTimer = 0.01f;//ToDo should best option create delay before fire and delay before InitFirstFire(remove if player click so fast like sniper rifle shoot like machine gun)
+	}
 }
 
 bool AWeaponDefault::CheckWeaponCanFire()
@@ -525,7 +529,7 @@ int8 AWeaponDefault::GetAviableAmmoForReload()
 		{			
 			if (MyInv->CheckAmmoForWeapon(WeaponSetting.WeaponType, AviableAmmoForWeapon))
 			{
-				AviableAmmoForWeapon = AviableAmmoForWeapon;
+				// AviableAmmoForWeapon = AviableAmmoForWeapon;
 			}
 		}
 	}

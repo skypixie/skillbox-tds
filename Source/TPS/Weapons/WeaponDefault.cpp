@@ -605,7 +605,7 @@ void AWeaponDefault::ShellDropFire_Multicast_Implementation(UStaticMesh* DropMes
 
 		if (!DropImpulseDirection.IsNearlyZero())
 		{
-			FVector FinalDir;
+			FVector FinalDir = FVector(ForceInitToZero);
 			LocalDir = LocalDir + (DropImpulseDirection * 1000.0f);
 
 			if (!FMath::IsNearlyZero(ImpulseRandomDispersion))
